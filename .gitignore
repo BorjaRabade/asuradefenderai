@@ -1,0 +1,51 @@
+# --- Security (CRITICAL) ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+secrets.json
+credentials.json
+token.json
+# ---
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env_folder/
+pip-wheel-metadata/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and Databases
+*.log
+*.sqlite
+*.db
+reporte_*.json
+backups/
+
+# System
+.DS_Store
+Thumbs.db
