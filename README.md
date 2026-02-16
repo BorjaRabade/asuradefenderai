@@ -18,6 +18,16 @@ Unlike standard linters that flood you with false positives, AsuraDefenderAI int
 *   **📊 Comprehensive Reporting**: Detailed JSON export functionality that includes both static findings and AI insights for audit trails.
 *   **⚡ Real-Time Feedback**: Live scanning metrics, severity classification (Critical, High, Medium, Low), and instant fix suggestions.
 
+## 📸 Screenshots
+
+### Modern Interface
+![Dashboard](images/Dashboard.png)
+
+### Intelligent Analysis
+| Analysis Results | False Positive Detection |
+|:---:|:---:|
+| ![Analysis Completed](images/AnalisisCompletado.png) | ![False Positive Detection](images/FalsoPositivo.png) |
+
 ## 🛠️ Installation
 
 ### Prerequisites
