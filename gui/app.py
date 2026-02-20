@@ -79,7 +79,7 @@ class App(ctk.CTk):
             self.export_btn.grid_remove()
 
     def select_file(self):
-        file = filedialog.askopenfilename(filetypes=[("Python Files", "*.py")])
+        file = filedialog.askopenfilename(filetypes=[("All Files", "*.*")])
         if file:
             self.target_target = file
             self.status_label.configure(text=f"Objetivo: {file}")
@@ -112,7 +112,7 @@ class App(ctk.CTk):
                 for vuln in self.vulnerabilities:
                     vid = f"{vuln.archivo}:{vuln.linea}"
                     try:
-                        analisis = self.ai_reviewer.analizar_vulnerabilidad(vuln.nombre, vuln.codigo_detectado)
+                        analisis = self.ai_reviewer.analizar_vulnerabilidad(vuln.nombre, vuln.codigo_detectado, vuln.archivo)
                         self.ai_results[vid] = analisis
                     except Exception as e:
                         print(f"Fallo IA en {vid}: {e}")

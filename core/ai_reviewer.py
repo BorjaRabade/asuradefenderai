@@ -18,18 +18,20 @@ class AIReviewer:
                 logging.error(f"Error inicializando Groq: {e}")
                 self.client = None
 
-    def analizar_vulnerabilidad(self, vul_nombre: str, codigo: str) -> str:
+    def analizar_vulnerabilidad(self, vul_nombre: str, codigo: str, filename: str) -> str:
         """
         Envía el código a la IA para un análisis de segunda opinión.
         """
         if not self.client:
             return "Error: API Key de Groq no configurada."
+            
+        ext = os.path.splitext(filename)[1].replace('.', '') or 'text'
 
         prompt = f"""
-        Actúa como un Auditor de Seguridad Senior. Revisa el siguiente código que ha sido marcado como una vulnerabilidad de tipo "{vul_nombre}".
+        Actúa como un Auditor de Seguridad Senior. Revisa el siguiente fragmento del archivo "{filename}" que ha sido marcado como una vulnerabilidad de tipo "{vul_nombre}".
 
         CÓDIGO:
-        ```python
+        ```{ext}
         {codigo}
         ```
 
